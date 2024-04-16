@@ -18,6 +18,7 @@
 .form {
     padding: 60px;
     background-color: #FFF;
+    border-radius: 32px;
 }
 
 .form__fieldset {
@@ -76,6 +77,8 @@
 
 .form__months {
     margin-bottom: 16px;
+    display: flex;
+    gap: 16px;
 }
 
 .form__btn-month {
@@ -86,6 +89,11 @@
 
 .form__btn-month_active {
     color: #D10014;
+    transform: scale(1.15);
+}
+
+.form__time {
+    display: none;
 }
 
 .form__subtitle {
@@ -95,30 +103,112 @@
     line-height: 140%;
 }
 
-
-.form__btn-month {}
-
-.form__item {}
-
 .form__input-wrapper {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    gap: 12px 8px;
+    margin-bottom: 32px;
 }
 
-.form__input {}
+.form__input {
+    padding: 12px 20px;
+    border-radius: 8px;
+    background: #F0F4F4;
+    border: 1fr solid transparent;
+    color: inherit;
+}
 
-.form__info {}
+.form__input:hover {
+    background-color: #F0F4F4;
+}
 
-.form__info-date {}
+.form__input:focus-visible {
+    border-color: #D0D0D0;
+}
 
-.form__btn-wrapper {}
+.form__info {
+    font-weight: 500;
+    line-height: 140%;
+}
 
-.form__btn {}
-
-.form__btn_next {}
+.form__btn-wrapper {
+    display: flex;
+    gap: 8px;
+}
 
 .form__btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 20px;
+    color: #222;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 140%;
+    border-radius: 50px;
+    background-color: #F0F4F4;
+}
+
+.form__btn_next {
+    background-color: #D10014;
+    color: #FFF;
+}
+
+.form__btn_submit {
+    background-color: #D10014;
+    color: #FFF;
+}
+
+.form__btn:disabled {
     color: #222;
     background: #F0F4F4;
-    opacity: 0,4;
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+@media (max-width: 1080px) {
+    .contact {
+        padding-top: 60px;
+    }
+
+    .contact__title {
+        font-size: 60px;
+    }
+
+    .form {
+        padding: 40px;
+    }
+
+    .form__title {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 900px) {
+    .contact {
+        padding: 50px 0 100px;
+    }
+
+    .contact__title {
+        font-size: 48px;
+    }
+}
+
+@media (max-width: 660px) {
+    .contact {
+        padding: 50px 0 80px;
+    }
+
+    .contact__title {
+        font-size: 32px;
+    }
+
+    .form {
+        padding: 24px 16px;
+        border-radius: 16px;
+    }
+
+    .form__input-wrapper {
+        grid-template-columns: 1fr;
+    }
 }
